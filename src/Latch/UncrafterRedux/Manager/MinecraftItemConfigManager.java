@@ -13,7 +13,7 @@ public class MinecraftItemConfigManager {
 
     private UncrafterRedux plugin = UncrafterRedux.getPlugin(UncrafterRedux.class);
     public static FileConfiguration itemsCfg;
-    public File itemsFile;
+    public static File itemsFile;
     private static final Material[] m = Material.values();
 
     // Set up mobs.yml configuration file
@@ -36,7 +36,7 @@ public class MinecraftItemConfigManager {
         itemsCfg = YamlConfiguration.loadConfiguration(itemsFile);
     }
 
-    public void createItemsConfig(){
+    public static void createItemsConfig(){
         try {
             itemsFile.createNewFile();
             for (int i = 0; i < m.length; i++){

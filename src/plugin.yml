@@ -9,3 +9,6 @@ commands:
     description: Uncraft
     usage: /uncraft
     permission: ur.command.uncraft
+  description: Unenchant
+    usage: /unenchant
+    permission: ur.command.unenchant

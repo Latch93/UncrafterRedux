@@ -23,6 +23,8 @@ public class UncrafterRedux extends JavaPlugin {
         setAllowedItems();
         loadItemConfigManager();
         loadMinecraftItemConfigManager();
+        MinecraftItemConfigManager.createItemsConfig();
+        ItemCfgm.createItemsConfig();
         try {
             ItemCfgm.setItemModelFromConfig();
             ItemCfgm.addItemToCfg();
@@ -36,6 +38,28 @@ public class UncrafterRedux extends JavaPlugin {
     @Override
     public void onDisable(){
 
+    }
+
+    public static List<UncraftModel> getAllowedItems() {
+        return allowedItems;
+    }
+
+    public static void addItemToAllowedItemsList(Material material, int amount) {
+        allowedItems.add(new UncraftModel(material, amount));
+    }
+
+    public static void clearAllowedItems() {
+        allowedItems.clear();
+    }
+
+    public void loadItemConfigManager(){
+        ItemCfgm = new ItemConfigManager();
+        ItemCfgm.setup();
+    }
+
+    public void loadMinecraftItemConfigManager(){
+        MinecraftItemCfgm = new MinecraftItemConfigManager();
+        MinecraftItemCfgm.setup();
     }
 
     public static void setAllowedItems(){
@@ -508,27 +532,5 @@ public class UncrafterRedux extends JavaPlugin {
         allowedItems.add(new UncraftModel(Material.MOSSY_COBBLESTONE, 1));
         allowedItems.add(new UncraftModel(Material.MOSSY_STONE_BRICKS, 1));
         allowedItems.add(new UncraftModel(Material.STONE_BRICKS, 4));
-    }
-
-    public static List<UncraftModel> getAllowedItems() {
-        return allowedItems;
-    }
-
-    public static void addItemToAllowedItemsList(Material material, int amount) {
-        allowedItems.add(new UncraftModel(material, amount));
-    }
-
-    public static void clearAllowedItems() {
-        allowedItems.clear();
-    }
-
-    public void loadItemConfigManager(){
-        ItemCfgm = new ItemConfigManager();
-        ItemCfgm.setup();
-    }
-
-    public void loadMinecraftItemConfigManager(){
-        MinecraftItemCfgm = new MinecraftItemConfigManager();
-        MinecraftItemCfgm.setup();
     }
 }
