@@ -6,8 +6,6 @@ import Latch.UncrafterRedux.Model.UncraftModel;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +61,6 @@ public class UncrafterRedux extends JavaPlugin {
     }
 
     public static void setAllowedItems(){
-
         // acacia wood building blocks
         allowedItems.add(new UncraftModel(Material.ACACIA_FENCE, 3));
         allowedItems.add(new UncraftModel(Material.ACACIA_FENCE_GATE, 1));
