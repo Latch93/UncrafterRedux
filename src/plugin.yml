@@ -1,5 +1,5 @@
 name: UncrafterRedux
-version: 0.0.1
+version: 0.0.7
 author: Latch
 main: Latch.UncrafterRedux.UncrafterRedux
 api-version: 1.16
@@ -9,6 +9,3 @@ commands:
     description: Uncraft
     usage: /uncraft
     permission: ur.command.uncraft
-  description: Unenchant
-    usage: /unenchant
-    permission: ur.command.unenchant
