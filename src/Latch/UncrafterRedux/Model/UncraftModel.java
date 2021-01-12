@@ -1,32 +1,32 @@
 package Latch.UncrafterRedux.Model;
 
-
-import org.bukkit.Material;
+import java.util.List;
 
 public class UncraftModel {
 
-    protected Material material;
-    protected Integer amount;
+    protected String itemToUncraft;
+    protected List<UncraftRecipeModel> recipes;
 
-    public UncraftModel(Material material, Integer amount) {
-        this.material = material;
-        this.amount = amount;
+    public UncraftModel(String itemToUncraft, List<UncraftRecipeModel> recipes) {
+        this.itemToUncraft = itemToUncraft;
+        this.recipes = recipes;
     }
 
-    public Material getItemName(){
-        return material;
+
+    public String getItemToUncraft(){
+        return itemToUncraft;
     }
 
-    public void setItemName(Material material) {
-        this.material = material;
+    public void setItemToUncraft(String itemToUncraft) {
+        this.itemToUncraft = itemToUncraft;
     }
 
-    public Integer getAmount(){
-        return amount;
+    public List<UncraftRecipeModel> getRecipes() {
+        return recipes;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public void setRecipes(List<UncraftRecipeModel> recipes) {
+        this.recipes = recipes;
     }
 
 }
